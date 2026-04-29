@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ============================================================
+     ARQUIVO: app/src/main/res/layout/item_trilha.xml
+     Este layout define a APARÊNCIA DE UM ITEM da lista.
+     O RecyclerView vai "inflar" (criar) esse layout para
+     cada Trilha que existir no banco de dados.
+     ============================================================ -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardTrilha"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:strokeWidth="0dp">
+
+    <!-- LinearLayout interno organiza ícone + textos + seta -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Ícone decorativo da trilha -->
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_menu_agenda"
+            app:tint="?attr/colorPrimary" />
+
+        <!-- Bloco de textos: nome da trilha -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textViewNomeTrilha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome da Trilha"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Subtítulo que pode mostrar contagem de subtópicos futuramente -->
+            <TextView
+                android:id="@+id/textViewSubtituloTrilha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toque para ver os conteúdos"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!-- Seta indicando que o item é clicável/navegável -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_media_next"
+            app:tint="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

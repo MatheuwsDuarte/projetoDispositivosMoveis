@@ -43,6 +43,12 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    //RecyclerView — necessário para a lista de Trilhas
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    //CoordinatorLayout — necessário para o layout da MainActivity
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
+
     // --- ROOM ---
     val roomVersion = "2.6.1"
     implementation("androidx.room:room-runtime:$roomVersion")
