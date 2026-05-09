@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarSubtopicos"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:titleTextColor="@android:color/white"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+        <!--
+            navigationIcon: seta de "voltar" na toolbar.
+            Vamos criar esse drawable no Passo 3.
+            Ao clicar, chama onSupportNavigateUp() que fecha a Activity.
+        -->
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSubtopicos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <!-- Exibido quando não há subtópicos nesta trilha -->
+    <TextView
+        android:id="@+id/textViewVazioSubtopicos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Nenhum conteúdo ainda.\nToque em + para adicionar!"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdicionarSubtopico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:contentDescription="Adicionar Subtópico"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

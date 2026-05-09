@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarCadastro"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:titleTextColor="@android:color/white"
+            android:title="Novo Subtópico"
+            app:navigationIcon="@drawable/ic_arrow_back" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- NestedScrollView: permite rolar o conteúdo quando há muito texto -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- CAMPO: Título -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Título *"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTitulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapSentences"
+                    android:maxLines="2" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- CAMPO: Tags -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Tags (separadas por vírgula)"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:helperText="Ex: python, pandas, função, loop">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextTags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- LABEL: Descrição / Código -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="4dp"
+                android:text="Descrição / Código (Markdown)"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- DICA DE USO DO MARKDOWN -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#F0F4FF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:strokeColor="#C0C8FF"
+                app:strokeWidth="1dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="💡 Use Markdown:\n**negrito**  |  *itálico*\n# Título  |  ## Subtítulo\n```python\nseu código aqui\n```"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace"
+                    android:textColor="#3D3D3D" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CAMPO: Área de texto Markdown (grande, multilinha) -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Escreva sua anotação em Markdown..."
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextConteudoMarkdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="200dp"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:scrollbars="vertical" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BOTÃO SALVAR -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSalvarSubtopico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:padding="14dp"
+                android:text="💾  Salvar Subtópico"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

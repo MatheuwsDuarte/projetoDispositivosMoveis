@@ -20,6 +20,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SubtopicosActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity">
+            <!--
+                parentActivityName: diz ao Android que a "mãe" desta Activity
+                é a MainActivity. Isso habilita a navegação hierárquica
+                correta com a seta de voltar.
+                exported="false": só o próprio app pode abrir esta Activity.
+            -->
+        </activity>
+        <activity
+            android:name=".CadastroSubtopicoActivity"
+            android:exported="false"
+            android:parentActivityName=".SubtopicosActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <!--
+            adjustResize: quando o teclado aparecer, o layout
+            se redimensiona em vez de cobrir os campos — essencial
+            para formulários com muitos campos.
+        -->
+
+        <activity
+            android:name=".DetalheSubtopicoActivity"
+            android:exported="false"
+            android:parentActivityName=".SubtopicosActivity" />
     </application>
 
 </manifest>

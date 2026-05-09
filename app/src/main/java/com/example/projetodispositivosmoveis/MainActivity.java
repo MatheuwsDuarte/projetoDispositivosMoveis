@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import android.content.Intent;
 
 import com.example.projetodispositivosmoveis.data.model.Trilha;
 import com.example.projetodispositivosmoveis.ui.trilha.TrilhaAdapter;
@@ -55,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTrilhaClick(Trilha trilha) {
-                // Sprint futura: navegação para a tela de Subtópicos
-                // Intent intent = new Intent(MainActivity.this, SubtopicoActivity.class);
-                // intent.putExtra("TRILHA_ID", trilha.getId());
-                // intent.putExtra("TRILHA_NOME", trilha.getNome());
-                // startActivity(intent);
+                // Intent é o "bilhete de passagem" entre Activities.
+                // Passamos os dados da Trilha como "extras" — pares chave/valor.
+                // A SubtopicosActivity vai ler esses extras para saber qual trilha exibir.
+                Intent intent = new Intent(MainActivity.this, SubtopicosActivity.class);
+                intent.putExtra("EXTRA_TRILHA_ID", trilha.getId());
+                intent.putExtra("EXTRA_TRILHA_NOME", trilha.getNome());
+                startActivity(intent);
                 Snackbar.make(
                         findViewById(android.R.id.content),
                         "Trilha: " + trilha.getNome(),

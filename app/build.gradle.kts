@@ -58,4 +58,9 @@ dependencies {
     val lifecycleVersion = "2.8.3"
     implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-livedata:$lifecycleVersion")
+
+    // --- MARKWON: renderiza Markdown em TextView nativo do Android ---
+// Core: renderização básica (negrito, itálico, listas, headers)
+    val markwonVersion = "4.6.2"
+    implementation("io.noties.markwon:core:$markwonVersion")
 }

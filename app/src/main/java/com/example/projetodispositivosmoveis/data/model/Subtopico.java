@@ -80,12 +80,12 @@ public class Subtopico {
     // CONSTRUTOR (sem o id — autogerado)
     // -------------------------------------------------------
     public Subtopico(String titulo, String conteudoMarkdown,
-                     String caminhoImagem, boolean isFavorite, int trilhaId) {
+                     String caminhoImagem, boolean isFavorite, String tags, int trilhaId) {
         this.titulo          = titulo;
         this.conteudoMarkdown = conteudoMarkdown;
         this.caminhoImagem   = caminhoImagem;
         this.isFavorite      = isFavorite;
-        this.tags             = tags;
+        this.tags            = tags;
         this.trilhaId        = trilhaId;
     }
 

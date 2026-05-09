@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardSubtopico"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:strokeWidth="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Linha superior: título + ícone favorito -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/textViewTituloSubtopico"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Título do Subtópico"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Estrela de favorito: preenchida ou vazia -->
+            <ImageView
+                android:id="@+id/imageViewFavorito"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/btn_star_big_off"
+                android:contentDescription="Favorito" />
+
+        </LinearLayout>
+
+        <!-- Prévia do conteúdo Markdown (primeiros caracteres) -->
+        <TextView
+            android:id="@+id/textViewPreviewConteudo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Prévia do conteúdo..."
+            android:textColor="@android:color/darker_gray"
+            android:textSize="13sp" />
+
+        <!-- Tags do subtópico -->
+        <TextView
+            android:id="@+id/textViewTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="#tag1 #tag2"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
